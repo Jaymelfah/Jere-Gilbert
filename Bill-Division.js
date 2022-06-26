@@ -31,8 +31,18 @@ function readLine() {
 
 function bonAppetit(bill, k, b) {
     // Write your code here
+    let result = '';
+    bill.splice(k, 1);
+    let costofbill = bill.reduce((previousValue, currentValue)=> previousValue + currentValue, 0) / 2;
+    if (costofbill == b){
+      result = 'Bon Appetit';
+    }
+    else{
+      result = b - costofbill;
+    }
+    console.log(result);
+  }
 
-}
 
 function main() {
     const firstMultipleInput = readLine().replace(/\s+$/g, '').split(' ');
